@@ -43,7 +43,7 @@ def home():
         for item in data:
             if item['Country'] == 'Benin':
                 res.update(item)
-            return render_template('index.html', data=res, country=countries)
+            return render_template('HW4_FJHRQWCEJV.html', data=res, country=countries)
 
 
 
