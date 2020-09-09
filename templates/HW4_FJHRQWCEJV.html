@@ -7,11 +7,11 @@
   <link rel="stylesheet" href="../static/css/font-awesome.min.css" />
   <link rel="stylesheet" href="../static/css/bootstrap.min.css" />
   <link rel="stylesheet" href="../static/css/index.css" />
-  <title>COVID TRACKER</title>
+  <title>React Page</title>
 </head>
 
 <body>
-  <!-- top header -->
+  <!-- blue header -->
   <div class="blue_head">
     <div class="blue_80">
       <div class="navigate">
@@ -47,36 +47,52 @@
     <div class="grey_80">
       <!-- status part -->
       <div class="status">
-        <div class="col-3 status_break">
+        <div class="status_break">
           <img src="../static/img/globe.png" alt="" />
           <div class="status_side">
             <h6>Stats Overview</h6>
-            <select name="west_africa" id="global_tins">
-              {% for country in countries %}
-                <option value="{{country}}">{{country}}</option>
-              {% endfor %}
-            </select>
+            <form action="/" method="post" id="myform">
+              <select name="west_africa" id="global_tins" onchange="document.getElementById('myform').submit()">
+                <option value="Benin" selected="selected">Benin</option>
+                <option value="Burkina Faso">Burkina Faso</option>
+                <option value="Cape Verde">Cape Verde</option>
+                <option value="Gambia">Gambia</option>
+                <option value="Ghana">Ghana</option>
+                <option value="Guinea">Guinea</option>
+                <option value="Guinea-Bissau">Guinea-Bissau</option>
+                <option value="Cote d'Ivoire">Cote d'Ivoire</option>
+                <option value="Liberia">Liberia</option>
+                <option value="Mali">Mali</option>
+                <option value="Mauritania">Mauritania</option>
+                <option value="Niger">Niger</option>
+                <option value="Nigeria">Nigeria</option>
+                <option value="Senegal">Senegal</option>
+                <option value="Sierra Leone">Sierra Leone</option>
+                <option value="Togo">Togo</option>
+              </select>
+            </form>
           </div>
         </div>
         <div class="status_break">
           <img src="../static/img/active.png" alt="" />
           <div class="status_side">
-            <h6>Total Coronavirus Cases</h6>
-            <p>1,245,347</p>
+            <h6>Total Cases</h6>
+            <p>{{data.Confirmed}}</p>
+
           </div>
         </div>
         <div class="status_break">
           <img src="../static/img/recovered.png" alt="" />
           <div class="status_side">
             <h6>Total Recovered</h6>
-            <p>259,544</p>
+          <p>{{data.Recovered}}</p>
           </div>
         </div>
         <div class="status_break">
           <img src="../static/img/deaths.png" alt="" />
           <div class="status_side">
             <h6>Total Deaths</h6>
-            <p>68,184</p>
+            <p>{{data.Deaths}}</p>
           </div>
         </div>
       </div>
@@ -988,10 +1004,10 @@
           </div>
         </div>
       </div>
-      
+
     </div>
   </div>
-  
+
   <!-- footer -->
   <div class="foot_section">
     <div class="foot_80 row m-auto">
@@ -999,7 +1015,8 @@
         <img src="../static/img/logo.png" alt="logo" />
         <h4 class="foot_h4 pl-3">Covid-19</h4>
         <p class="pt-5">
-          PH Media is the tech lead behind this webpage.
+          BernardDeDesigner an online marketplace built to cope with promising
+          future
         </p>
       </div>
       <div class="col-sm-6 row pl-5">
@@ -1021,12 +1038,12 @@
         <div class="col-5">
           <h4>Contact Us</h4>
           <ul>
-            <li>Tel: +23355631160</li>
-            <li>phmedia@gmail.com</li>
+            <li>Tel: +233272382622</li>
+            <li>support@Dedesigner.com</li>
           </ul>
           <h4>Location</h4>
           <ul>
-            <li>Tadisco down-Takoradi</li>
+            <li>West Ridge</li>
           </ul>
         </div>
       </div>
@@ -1038,8 +1055,10 @@
       </div>
     </div>
     <div class="foot_20">
-      <p>&COPY; PHMedia All rights reserved</p>
+      <p>&COPY; BernardDedesigner All rights reserved</p>
     </div>
   </div>
+  <script src="/static/js/dom.js"></script>
 </body>
+
 </html>
